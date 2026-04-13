@@ -714,7 +714,43 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"2R06K":[function(require,module,exports,__globalThis) {
-console.log("kkkk");
+const listEl = document.querySelector(".list");
+// const inputEl = document.querySelectorAll(".input");
+// const resultEl = document.querySelectorAll(".texst");
+const allItems = document.querySelectorAll(".item");
+const correctAnswers = {
+    0: "1929",
+    1: "1775",
+    2: "1223"
+};
+listEl.addEventListener("click", (event)=>{
+    const btn = event.target.closest(".btn");
+    if (!btn) return;
+    const item = btn.closest(".item");
+    if (!item) return;
+    const index = Array.from(allItems).indexOf(item);
+    const inputEl = item.querySelector(".input");
+    const resultEl = item.querySelector(".texst");
+    const ansver = inputEl.value.trim();
+    if (ansver === "") {
+        resultEl.textContent = "\u0411\u0443\u0434\u044C \u043B\u0430\u0441\u043A\u0430, \u0432\u0432\u0435\u0434\u0456\u0442\u044C \u0447\u0438\u0441\u043B\u043E";
+        resultEl.classList.add("wrong");
+        resultEl.classList.remove("correct");
+    } else if (ansver === correctAnswers[index]) {
+        resultEl.textContent = "\u0412\u0456\u0442\u0430\u044E! \u0412\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0430";
+        resultEl.classList.add("correct");
+        resultEl.classList.remove("wrong");
+    } else if (ansver !== correctAnswers[index]) {
+        resultEl.textContent = "\u0412\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u044C \u043D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0430. \u0421\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0449\u0435 \u0440\u0430\u0437";
+        resultEl.classList.add("wrong");
+        resultEl.classList.remove("correct");
+    }
+//   if (ansver === "1929") {
+//     output = "Вітаю! Відповідь правильна";
+//   } else if (ansver !== "1929") {
+//     output = "Нажаль, відповідь неправильна";
+//   }
+});
 
 },{}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire67cc", {})
 
