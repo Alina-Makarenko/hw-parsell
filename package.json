@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx parcel src/index.html",
     "build": "parcel build src/index.html --public-url /hw-parsell/",
@@ -22,6 +22,12 @@
   },
   "homepage": "https://github.com/Alina-Makarenko/hw-parsell#readme",
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "@partiellkorrekt/parcel-transformer-handlebars": "^1.0.5",
+    "parcel": "^2.16.4",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.9"
   }
 }

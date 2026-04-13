@@ -1,0 +1,8 @@
+{{#each questions}}
+<li class="item">
+    <h3 class="title">{{this.question}}</h3>
+    <input type="text" class="input" id="input-{{@index}}" placeholder="Введіть вашу відповідь">
+    <button type="button" class="btn" data-id="{{@index}}">Перевірити</button>
+    <p class="text">{{this.answer}}</p>
+</li>
+{{/each}}

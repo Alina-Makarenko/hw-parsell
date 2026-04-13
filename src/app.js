@@ -4,9 +4,14 @@ const listEl = document.querySelector(".list");
 const allItems = document.querySelectorAll(".item");
 
 const correctAnswers = {
-  0: "1929", // В якому році утворилася ОУН?
-  1: "1775", // Остаточна ліквідація Запорозької Січі?
-  2: "1223", // Битва на р. Калка?
+  0: "1929",
+  1: "1775", 
+  2: "1223", 
+  3: "1848",
+  4: "1848", 
+  5: "1798", 
+  6: "1828",
+  7: "1840",
 };
 
 listEl.addEventListener("click", (event) => {
